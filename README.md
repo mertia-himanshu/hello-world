@@ -1,3 +1,3 @@
 # hello-world
-getting started
+getting started in MAC
 created a branch
