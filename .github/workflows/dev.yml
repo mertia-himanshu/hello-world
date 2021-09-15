@@ -14,10 +14,10 @@ jobs:
       matrix:
         branch:
         - master
-        - 'branch-*'
+        - branch-4.0.x
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ matrix.branch }}
       - run: echo I've checked out the `${{ matrix.branch }}` branch
-  
+      
