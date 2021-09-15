@@ -9,11 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        branch:
-        - master
-        - 'branch-*'
     steps:
       - uses: actions/checkout@v2
         with:
