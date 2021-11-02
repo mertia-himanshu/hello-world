@@ -16,10 +16,8 @@ jobs:
           
       - name: Use tag
         id: tag_step
-        run: echo "setting VERSION"
-        env: 
-          VERSION: ${{steps.tag.outputs.tag}}
+        run: echo "VERSION=${{steps.tag.outputs.tag}}" >> $GITHUB_ENV
         
       - name : print tag
-        run: echo ${{steps.tag_step.env.VERSION}}
+        run: echo "${{ env.VERSION }}"
       
