@@ -20,5 +20,5 @@ jobs:
           VERSION: ${{steps.tag.outputs.tag}}
         
       - name : print tag
-        run: echo $VERSION
+        run: echo ${{env.VERSION}}
       
