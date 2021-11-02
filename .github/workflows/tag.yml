@@ -17,8 +17,9 @@ jobs:
       - name: Use tag
         run: echo "setting VERSION"
         env:
+          jobs.release.VERSION: ${{steps.tag.outputs.tag}}
           VERSION: ${{steps.tag.outputs.tag}}
         
       - name : print tag
-        run: echo ${{env.VERSION}}
+        run: echo "env.version ${{env.VERSION}} ; version ${{VERSION}} ; jobs.release.VERSION {{jobs.release.VERSION}}"
       
