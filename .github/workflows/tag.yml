@@ -15,7 +15,8 @@ jobs:
           strip_v: true
           
       - name: Use tag
-        run: export VERSION=${{steps.tag.outputs.tag}}
+        env:
+          VERSION: ${{steps.tag.outputs.tag}}
         
       - name : print tag
         run: echo $VERSION
