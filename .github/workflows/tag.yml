@@ -15,11 +15,11 @@ jobs:
           strip_v: true
           
       - name: Use tag
+        id: tag_step
         run: echo "setting VERSION"
-        env:
-          jobs.release.VERSION: ${{steps.tag.outputs.tag}}
+        env: 
           VERSION: ${{steps.tag.outputs.tag}}
         
       - name : print tag
-        run: echo "env.version ${{env.VERSION}} ; version ${{VERSION}} ; jobs.release.VERSION {{jobs.release.VERSION}}"
+        run: echo ${{steps.tag_step.env.VERSION}}
       
